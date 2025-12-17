@@ -7,7 +7,6 @@ namespace MeuProjeto.Application.Services
 {
     public class DespesaService : IDespesaService
     {
-        // O serviço depende da INTERFACE do Repositório (IDespesaRepository)
         private readonly IDespesaRepository _repository;
 
         public DespesaService(IDespesaRepository repository)
@@ -22,7 +21,6 @@ namespace MeuProjeto.Application.Services
 
         public async Task AdicionarAsync(Despesa despesa)
         {
-            // Exemplo de Lógica de Negócio:
             if (despesa.Valor <= 0)
             {
                 throw new ArgumentException("O valor da despesa deve ser positivo.");

@@ -30,6 +30,4 @@ public class DespesasController(IDespesaService despesaService) : ControllerBase
             return BadRequest(new { Message = ex.Message });
         }
     }
-
 }
-

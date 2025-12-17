@@ -13,18 +13,14 @@ namespace MeuProjeto.Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Controllers
             builder.Services.AddControllers();
 
-            // Swagger
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            // DI
             builder.Services.AddScoped<IDespesaRepository, DespesaRepository>();
             builder.Services.AddScoped<IDespesaService, DespesaService>();
 
-            // DbContext
             builder.Services.AddDbContext<DespesaDbContext>(op =>
             {
                 op.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
